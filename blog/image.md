@@ -15,7 +15,7 @@ title: Image
 >
 > Möge ich dem Leiden und der Unwissenheit anderer mit Mitgefühl begegnen.
 
-<span style="color:blue">some \*This is Blue italic.\* text</span>
+<span style="color:blue">*This is Blue italic.*</span>
 
 
 
