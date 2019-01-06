@@ -14,5 +14,9 @@ title: Image
 > Möge ich mich voller Mitgefühl umfangen.
 >
 > Möge ich dem Leiden und der Unwissenheit anderer mit Mitgefühl begegnen.
->
+
+<span style="color:blue">some \*This is Blue italic.\* text</span>
+
+
+
 >
