@@ -5,11 +5,12 @@ import Layout from "../components/layout"
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
-  const { markdownRemark } = data // data.markdownRemark holds our post data
+  console.log(data)
+  const { markdownRemark, allMarkdownRemark } = data // data.markdownRemark holds our post data
   if(!markdownRemark) return null
   const { frontmatter, html } = markdownRemark
   return (
-    <Layout>
+    <Layout titles={allMarkdownRemark.edges.map(({node})=>node.frontmatter)}>
     <div className="blog-post-container">
       <div className="blog-post">
         <h1>{frontmatter.title}</h1>
@@ -27,6 +28,19 @@ export default function Template({
 
 export const pageQuery = graphql`
   query($path: String!) {
+    allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+              path
+            }
+          }
+        }
+      }
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {

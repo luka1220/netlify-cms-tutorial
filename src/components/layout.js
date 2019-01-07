@@ -1,44 +1,33 @@
 
 import React from "react"
-import { css, jsx } from "@emotion/core"
-import { Link } from "gatsby"
+import { css } from "@emotion/core"
 
 import { rhythm } from "../utils/typography"
+import Header from "./header"
+import Navigation from "./navigation"
 
-export default ({ children }) => (
+export default ({ children, titles }) => (
+  <div css={css`
+    background-image: linear-gradient(to right, green 0%, white 25%);
+    height: 100vh;
+    `}>
+  <Header/>
+  <div css={css`
+      display: flex;
+    `}>
+  <Navigation titles={titles}/>
   <div
-  css={{
-      backgroundColor: 'hotpink',
-      '&:hover': {
-        color: 'lightgreen'
-      }
-    }}
-    /*css={css`
+    css={css`
       margin: 0 auto;
-      max-width: 700px;
+      width: 75%;
+      max-width: 800px;
       padding: ${rhythm(2)};
       padding-top: ${rhythm(1.5)};
-    `}*/
+    `}
   >
-    <Link to={`/`}>
-      <h3
-        /*css={css`
-          margin-bottom: ${rhythm(2)};
-          display: inline-block;
-          font-style: normal;
-        `}*/
-      >
-        LebenLernen
-      </h3>
-    </Link>
-    <Link
-      to={`/about/`}
-      /*css={css`
-        float: right;
-      `}*/
-    >
-      About
-    </Link>
+    
     {children}
+  </div>
+  </div>
   </div>
 )
