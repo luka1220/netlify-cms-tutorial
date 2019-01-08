@@ -2,11 +2,10 @@ import React from "react";
 import { css } from "@emotion/core";
 import "../css/layout.css";
 import { color } from "../constants";
-import { rhythm } from "../utils/typography";
 import Header from "./header";
 import Navigation from "./navigation";
 
-export default ({ children, titles }) => (
+export default ({ children, titles, title }) => (
   <div
     css={css`
       @media (min-width: 500px) {
@@ -26,7 +25,7 @@ export default ({ children, titles }) => (
       min-height: 100vh;
     `}
   >
-    <Header />
+    <Header title={title} />
     <div
       css={css`
         display: flex;
@@ -43,8 +42,6 @@ export default ({ children, titles }) => (
             width: 100%;
           }
           max-width: 800px;
-          padding: ${rhythm(1)};
-          padding-top: ${rhythm(1.5)};
         `}
       >
         {children}

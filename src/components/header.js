@@ -1,77 +1,112 @@
 import React from "react";
 import { css } from "@emotion/core";
 import { Link } from "gatsby";
-import { rhythm } from "../utils/typography";
-//style={{background: `url("/assets/bg-header.png")`}}
-export default props => (
-  <header>
-    <div
+export default ({ title }) => (
+  <header
+    css={css`
+      height: 180px;
+      @media (max-width: 700px) {
+        height: 70px;
+      }
+    `}
+  >
+    <PinkBar title={title} />
+    <FlexHeader />
+  </header>
+);
+
+const PinkBar = ({ title }) => (
+  <div
+    css={css`
+      display: flex;
+      margin: 0 auto;
+      position: relative;
+      top: 120px;
+      width: calc(100% - 30px);
+      height: 50px;
+      background-color: rgb(255, 204, 255);
+      box-shadow: 0px 0px 10px 10px rgb(255, 204, 255);
+      @media (max-width: 700px) {
+        top: 10px;
+      }
+    `}
+  >
+    <h1
       css={css`
-        margin: 0 auto;
-        position: relative;
-        top: 100px;
-        width: calc(100% - 30px);
-        height: 50px;
-        background-color: rgb(255, 204, 255);
-        box-shadow: 0px 0px 10px 10px rgb(255, 204, 255);
-        color: white;
         text-align: center;
+        color: white;
+        flex-grow: 1;
       `}
     >
-      Aktuelles
+      {title}
+    </h1>
+  </div>
+);
+
+const FlexHeader = () => (
+  <div
+    css={css`
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      top: -50px;
+      margin-bottom: -50px;
+      height: 180px;
+      @media (max-width: 700px) {
+        height: 70px;
+      }
+    `}
+  >
+    <div
+      css={css`
+        padding: 15px;
+      `}
+    >
+      <img src="/assets/header-pic01.png" alt="pic" height="100%" />
     </div>
     <div
       css={css`
-        display: flex;
-        position: relative;
-        top: -50px;
-        margin-bottom: -50px;
+        flex-grow: 1;
       `}
     >
-      <div
-        css={css`
-          width: calc(25% - 20px);
-          min-width: 250px;
-        `}
-      >
-        <img src="/assets/header-pic01.png" alt="pic" width="100%" />
-      </div>
-      <div
-        css={css`
-          position: relative;
-          top: 40px;
-          left: -90px;
-          @media (max-width: 1075px) {
-            left: 180px;
-          }
-        `}
-      >
-        <Link to={`/`}>
-          <h3
+      <Link to={`/`}>
+        <h3
+          css={css`
+            position: relative;
+            top: 40px;
+            left: -90px;
+            display: inline-block;
+            font-style: normal;
+            @media (max-width: 700px) {
+              display: none;
+            }
+          `}
+        >
+          Bewusst ElternSein
+          <div
             css={css`
-              margin-bottom: ${rhythm(2)};
-              display: inline-block;
-              font-style: normal;
+              position: relative;
+              left: 90px;
             `}
           >
-            Bewusst ElternSein
-            <div
-              css={css`
-                margin: 0px 100px;
-              `}
-            >
-              <small>Mit Kindern leben & lernen</small>
-            </div>
-          </h3>
-        </Link>
-      </div>
-      <div
-        css={css`
-          align-self: flex-;
-        `}
-      >
-        <img src="/assets/logo-lebenlernen-home.png" alt="logo" />
-      </div>
+            <small>Mit Kindern leben & lernen</small>
+          </div>
+        </h3>
+      </Link>
     </div>
-  </header>
+    <div
+      css={css`
+        padding: 15px;
+      `}
+    >
+      <img
+        css={css`
+          float: right;
+        `}
+        src="/assets/logo-lebenlernen-home.png"
+        alt="logo"
+        height="100%"
+      />
+    </div>
+  </div>
 );

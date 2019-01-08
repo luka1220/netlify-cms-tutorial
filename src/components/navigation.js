@@ -1,6 +1,7 @@
 import React from "react";
 import { css } from "@emotion/core";
 import { Link } from "../styledComponents";
+import { color } from "../constants";
 
 export default ({ titles = [] }) => {
   console.log(titles);
@@ -9,9 +10,10 @@ export default ({ titles = [] }) => {
       css={css`
         padding-top: 40px;
         width: 25%;
-        min-width: 270px;
+        min-width: 200px;
         @media (max-width: 500px) {
           width: 100%;
+          background-image: linear-gradient(to right, ${color.primary}, white);
         }
       `}
     >
