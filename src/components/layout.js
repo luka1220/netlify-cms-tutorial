@@ -8,8 +8,8 @@ import Navigation from "./navigation"
 
 export default ({ children, titles }) => (
   <div css={css`
-    background-image: linear-gradient(to right, green 0%, white 25%);
-    height: 100vh;
+    background-image: linear-gradient(to right, rgb(166,206,57) 0%, white 25%);
+    min-height: 100vh;
     `}>
   <Header/>
   <div css={css`
