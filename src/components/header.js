@@ -1,6 +1,7 @@
 import React from "react";
 import { css } from "@emotion/core";
 import { Link } from "gatsby";
+import NavIcon from "./NavIcon";
 export default ({ title }) => (
   <header
     css={css`
@@ -57,9 +58,13 @@ const FlexHeader = () => (
       }
     `}
   >
+    <NavIcon />
     <div
       css={css`
         padding: 15px;
+        @media (max-width: 700px) {
+          display: none;
+        }
       `}
     >
       <img src="/assets/header-pic01.png" alt="pic" height="100%" />

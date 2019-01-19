@@ -15,7 +15,7 @@ export default function Template({
       title={frontmatter.title}
     >
       <div className="blog-post-container">
-        <div className="blog-post">
+        <div className="blog-post" style={{ padding: "1.25rem" }}>
           <h1>{frontmatter.title}</h1>
           <h2>{frontmatter.date}</h2>
           <div

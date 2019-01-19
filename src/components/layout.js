@@ -8,7 +8,7 @@ import Navigation from "./navigation";
 export default ({ children, titles, title }) => (
   <div
     css={css`
-      @media (min-width: 500px) {
+      @media (min-width: 700px) {
         background-image: linear-gradient(
           to right,
           ${color.primary} 0%,
@@ -29,7 +29,7 @@ export default ({ children, titles, title }) => (
     <div
       css={css`
         display: flex;
-        @media (max-width: 500px) {
+        @media (max-width: 700px) {
           flex-direction: column;
         }
       `}
@@ -38,7 +38,7 @@ export default ({ children, titles, title }) => (
       <div
         css={css`
           width: 75%;
-          @media (max-width: 500px) {
+          @media (max-width: 700px) {
             width: 100%;
           }
           max-width: 800px;
